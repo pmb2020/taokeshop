@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Log;
 
 class DataokeService
 {
-    private string $host = 'https://openapi.dataoke.com';
+    private string $host = 'https://openapi.dataoke.com/';
     private static $client;
 
     public function __construct(){
