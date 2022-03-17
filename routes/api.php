@@ -18,4 +18,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('banners',['App\Http\Controllers\Home\BannerController','index']);
+Route::get('banners',['App\Http\Controllers\Api\BannerController','index']);
+Route::get('categories',['App\Http\Controllers\Api\CategoryController','index']);
+Route::get('goods',['App\Http\Controllers\Api\GoodsController','index']);
+Route::get('goods/show',['App\Http\Controllers\Api\GoodsController','show']);
+Route::get('search',['App\Http\Controllers\Api\SearchController','index']);
+Route::get('hotSearch',['App\Http\Controllers\Api\SearchController','hotSearch']);
