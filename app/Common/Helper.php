@@ -1,11 +1,18 @@
 <?php
 
-function apiResponse($code, $msg = '', $data = [])
-{
-    return response([
-        'code' => $code,
-        'msg' => $msg,
+function apiSuccess($data=[]){
+    return response()->json([
+        'code' => 0,
+        'msg' => 'success',
         'data' => $data
+    ]);
+}
+
+function apiError(array $codeResponse){
+    return response()->json([
+        'code' => $codeResponse[0],
+        'msg' => $codeResponse[1],
+        'data' => []
     ]);
 }
 
