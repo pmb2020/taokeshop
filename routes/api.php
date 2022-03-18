@@ -24,3 +24,5 @@ Route::get('goods',['App\Http\Controllers\Api\GoodsController','index']);
 Route::get('goods/show',['App\Http\Controllers\Api\GoodsController','show']);
 Route::get('search',['App\Http\Controllers\Api\SearchController','index']);
 Route::get('hotSearch',['App\Http\Controllers\Api\SearchController','hotSearch']);
+Route::get('comment',['App\Http\Controllers\Api\CommentController','index']);
+Route::get('order/taobao',['App\Http\Controllers\APi\OrderController','taobao']);
