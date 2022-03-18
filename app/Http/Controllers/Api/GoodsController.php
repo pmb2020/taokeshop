@@ -32,4 +32,14 @@ class GoodsController extends Controller
         $res = DataokeService::getClient()->request($url,$params,'v1.2.3');
         return apiSuccess($res);
     }
+
+    /**
+     * 转链
+     */
+    public function transformLink(Request $request){
+        $url = 'api/tb-service/get-privilege-link';
+        $params = $request->only('goodsId','couponId');
+        $res = DataokeService::getClient()->request($url,$params,'v1.3.1');
+        return apiSuccess($res);
+    }
 }
