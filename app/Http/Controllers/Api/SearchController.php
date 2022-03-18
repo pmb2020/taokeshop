@@ -16,6 +16,17 @@ class SearchController extends Controller
     }
 
     /**
+     * 搜索建议（联想词）
+     * $type 1.大淘客搜索 2.联盟搜索 3.超级搜索
+     */
+    public function suggestion(Request $request){
+        $url = 'api/goods/search-suggestion';
+        $params = $request->only('keyWords','type');
+        $res = DataokeService::getClient()->request($url,$params,'v1.0.2');
+        return apiSuccess($res);
+    }
+
+    /**
      * 热搜记录
      * $type 1：买家热搜榜、2：淘客热搜榜
      */
