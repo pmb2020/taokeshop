@@ -42,7 +42,7 @@ class DataokeService
         $url = $this->host.$url .'?'. http_build_query($params);
         $res = myCurl($url);
         if ($res['code'] !=0){
-            Log::error('大淘客接口异常：',$res);
+            Log::error('大淘客接口'.$url.'异常：',$res);
             throw new ApiException([$res['code'],'dtk：'.$res['msg']]);
         }
         return $res['data'];
