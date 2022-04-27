@@ -31,3 +31,4 @@ Route::get('order/taobao',['App\Http\Controllers\APi\OrderController','taobao'])
 Route::get('dayBlast',['App\Http\Controllers\Api\SpecialController','dayBlast']);
 Route::get('baoyou99',['App\Http\Controllers\Api\SpecialController','baoyou99']);
 Route::get('transformLink',['App\Http\Controllers\Api\GoodsController','transformLink']);
+Route::get('friendCircle',['App\Http\Controllers\Api\MaterialController','friendCircle']);
