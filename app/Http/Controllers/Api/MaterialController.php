@@ -8,10 +8,11 @@ use Illuminate\Http\Request;
 
 class MaterialController extends Controller
 {
-    public function friendCircle(){
+    public function friendCircle(Request $request){
         $url = 'api/goods/friends-circle-list';
+        $params = $request->only('pageSize','pageId','cid');
         $res = DataokeService::getClient()
-            ->request($url,[],' v1.3.0');
+            ->request($url,$params,' v1.3.0');
         return apiSuccess($res['list']);
     }
 }
